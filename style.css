@@ -1,0 +1,36 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
+#sizePrompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sizeInput {
+    height: 20px;
+}
+
+#container {
+    background-color: gray;
+}
+/*
+.row {
+    display: flex;
+    height: 25%;
+}
+*/
+
+.cell {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    border: 3px solid black;
+}
+
+div > div {
+    display: flex;
+    height: 25%;
+}
