@@ -21,23 +21,32 @@ let container = document.getElementById("container");
 
 
 function makeGrid() {
-    console.log("FUNCTION CALLED:  makeGrid");
-    let dimensions = sizeInput.value;
-    console.log("DIMENSIONS: " + sizeInput.value);
-    let row = dimensions;
-    let col = dimensions;
-    let rowCount = 1;
-    while (rowCount <= row) {
-        console.log("WHILE LOOP RAN");
-        let newRow = document.createElement("div");
-        newRow.setAttribute("class", `row${rowCount}`);
-            for (let i = 1; i <= dimensions; i++) {
-                let column = document.createElement("span");
-                column.setAttribute("id", `${rowCount}${i}`);
-                column.innerText = `R${rowCount}\nC${i}`;
-                newRow.appendChild(column);
-            }
+    if (sizeInput.value <= 100) {
+        console.log("FUNCTION CALLED:  makeGrid");
+        let dimensions = sizeInput.value;
+        console.log("DIMENSIONS: " + sizeInput.value);
+        let row = dimensions;
+        let col = dimensions;
+        let rowCount = 1;
+        while (rowCount <= row) {
+            let newRow = document.createElement("span");
+            newRow.setAttribute("class", "row");
+                for (let i = 1; i <= dimensions; i++) {
+                    let cell = document.createElement("span");
+                    cell.setAttribute("id", `${rowCount}${i}`);
+                    cell.setAttribute("class", "cell");
+                    cell.addEventListener("mouseover", changeColor);
+                    newRow.appendChild(cell);
+                }
             rowCount++;
             container.appendChild(newRow);
+        }
+    } else {
+        alert("Grid can only be 100 units or smaller");
     }
+}
+
+function changeColor() {
+    this.style.backgroundColor = "black";
+    console.log(this.getAttribute("id"));
 }

@@ -14,23 +14,24 @@ html, body {
 }
 
 #container {
-    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
 }
-/*
+
 .row {
     display: flex;
-    height: 25%;
+    flex: 1;
+    background-color: aqua;
 }
-*/
+
 
 .cell {
-    text-align: center;
-    align-content: center;
-    margin: auto;
-    border: 3px solid black;
+    display: flex;
+    flex: auto;
 }
 
-div > div {
-    display: flex;
-    height: 25%;
-}
+
