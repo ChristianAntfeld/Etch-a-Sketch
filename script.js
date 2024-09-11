@@ -9,20 +9,14 @@ sizeInput.setAttribute("type", "text");
 let submit = document.createElement("button");
 submit.setAttribute("id", "submit");
 submit.innerText = "Create grid";
-
 submit.addEventListener("click", makeGrid);
-
 getGridSize.append(message, sizeInput, submit);
 document.body.prepend(getGridSize);
 
-
-
 let container = document.getElementById("container");
-
 
 function makeGrid() {
     if (sizeInput.value <= 100) {
-        console.log("FUNCTION CALLED:  makeGrid");
         let dimensions = sizeInput.value;
         console.log("DIMENSIONS: " + sizeInput.value);
         let row = dimensions;
@@ -33,7 +27,6 @@ function makeGrid() {
             newRow.setAttribute("class", "row");
                 for (let i = 1; i <= dimensions; i++) {
                     let cell = document.createElement("span");
-                    cell.setAttribute("id", `${rowCount}${i}`);
                     cell.setAttribute("class", "cell");
                     cell.addEventListener("mouseover", changeColor);
                     newRow.appendChild(cell);
@@ -48,5 +41,4 @@ function makeGrid() {
 
 function changeColor() {
     this.style.backgroundColor = "black";
-    console.log(this.getAttribute("id"));
 }
